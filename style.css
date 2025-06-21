@@ -1,10 +1,81 @@
 body {
-    /* Replace 'your-image.jpg' with the actual name of your photo file */
-    background-image: url('your-image.jpg');
+    /* You can replace this URL with your own image */
+    background-image: url('https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f5?auto=format&fit=crop');
+
+    /* Make the image cover the entire background */
     background-size: cover;
+
+    /* Center the image */
     background-position: center;
-    background-repeat: no-repeat;
+
+    /* This makes the background image stay in place while scrolling */
     background-attachment: fixed;
-    height: 100vh;
+
+    /* Make the body take up the full viewport height */
+    min-height: 100vh;
+
+    /* Use Flexbox to center content */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+
+    /* Remove default browser margin */
     margin: 0;
-} 
+}
+
+h1 {
+    /* A sunset-like gradient from pink to orange to yellow */
+    background-image: linear-gradient(to right, hotpink, orange, gold);
+
+    /* This clips the background to the text. 
+       -webkit- is for browser compatibility (like Chrome, Safari) */
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    /* This makes the text color transparent so the background gradient is visible */
+    color: transparent;
+
+    font-size: 3rem; /* Making the font a bit bigger to show off the effect */
+
+    /* Add a shadow to make the text more readable against a busy background */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.welcome-container {
+    /* This container will be the reference for positioning the images */
+    position: relative;
+    /* Add padding to create space between the text and the surrounding images */
+    padding: 80px;
+}
+
+.gallery-img {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* Ensures the image fills the space without distortion */
+    border-radius: 50%; /* Makes the images circular */
+    border: 4px solid white;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Position each image around the welcome text */
+.img-1 {
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+.img-2 {
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+.img-3 {
+    bottom: 0;
+    left: 0;
+    transform: translate(-50%, 50%);
+}
+.img-4 {
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+}
